@@ -15,6 +15,17 @@
 <body>
   <div>
     <nav id="menu">
+      <div id="nav-icon4" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="menu-links">
+        <a href="#publications" class="menu_item">RESEARCH OUTPUT</a>
+        <a href="#teaching" class="menu_item">TEACHING</a>
+        <a href="#interests" class="menu_item">INTERESTS</a>
+        <a href="./Grzegorz-Lisowski-CV.pdf" target="_blank" class="menu_item">CV</a>
+        <a href="#contact" class="menu_item menu_item--mobile">CONTACT</a>
       <button id="hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -27,6 +38,20 @@
     </nav>
   </div>
   <script>
+    const btn = document.getElementById('nav-icon4');
+    const links = document.getElementById('menu-links');
+    btn.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') btn.click();
+    });
+    links.querySelectorAll('.menu_item').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        btn.classList.remove('open');
     const btn = document.getElementById('hamburger');
     const links = document.getElementById('menu-links');
     btn.addEventListener('click', () => {
@@ -42,6 +67,10 @@
   </script>
   <div>
     <section>
+      <h1>Hi, I am Grzesiek, a postdoc at Bernoulli Institute, University of Groningen!</a>
+      </h1>
+      <p id="description">
+        My main focus is on game-theoretic aspects of collective decision making. I am also very interested in deliberation and social network analysis.
       <h1>Hi, I am Grzegorz, a postdoc at <a href="https://home.agh.edu.pl/~pragma/#about">PRAGMA research group.</a>
       </h1>
       <p id="description">
@@ -52,6 +81,89 @@
     </section>
 
     <section id="publications">
+      <h2>Research Output</h2>
+      <h3>Game Theory and Social Choice</h3>
+
+      <hr>
+      <div class="paper">
+        <p class="paper-title">Swap-Stability in Refugee Housing: A Story About Anonymous Preferences</p>
+        <p class="paper-venue">EUMAS 2025</p>
+        <p class="paper-title">Strategic Cost Selection in Participatory Budgeting</p>
+        <p class="paper-venue">NeurIPS 2025</p>
+        <p class="paper-authors">With Piotr Faliszewski, Łukasz Janeczko, Andrzej Kaczmarczyk, Piotr Skowron, Stanisław Szufa, Mateusz Szwagierczak</p>
+        <p class="paper-abstract">In this work we explore the ways in which project proposers can act strategically to see their submission selected with the highest possible cost (to ensure high-quality development of the project). We focus on how different voting rules shape the structure of Nash equilibria in games based on this type of strategizing.</p>
+      </div>
+
+      <hr>
+      <div class="paper">
+        <p class="paper-title">Neighborhood Stability in Assignments on Graphs</p>
+        <p class="paper-venue">WINE-2025</p>
+        <p class="paper-authors">With Haris Aziz, Mashbat Suzuki, and Jeremy Vollen</p>
+        <p class="paper-abstract">In this paper we explore swap stable assignments on graphs, where agents can only exchange their positions with their direct neighbors. We show the surprising existence of stable solutions on classes of graphs such as paths or cycles.</p>
+      </div>
+
+      <hr>
+      <div class="paper">
+        <p class="paper-title">Swap-Stablility in Refugee Housing: A Story About Anonymous Preferences</p>
+        <p class="paper-venue">EUMAS-2025</p>
+        <p class="paper-authors">with Simon Schierreich</p>
+        <p class="paper-abstract">Here, we explore the properties of methods of allocating refugees to houses in a partially filled community. We focus on the property of swap stability, showing computational complexity aspects of finding stable solutions.</p>
+      </div>
+
+      <hr>
+      <div class="paper">
+        <p class="paper-title">Strategic Nominee Selection in Tournament Solutions</p>
+        <p class="paper-venue">EUMAS-2023</p>
+        <p class="paper-abstract">Here, I consider computational complexity aspects of games between teams that can field their representatives to compete in a tournament. I show the hardness of finding equilibrium states from the perspective of several methods of winner determination.</p>
+      </div>
+
+      <hr>
+      <div class="paper">
+        <p class="paper-title">Strategic Nominee Selection in Tournament Solutions</p>
+        <p class="paper-venue">EUMAS 2022</p>
+        <p class="paper-abstract">Tournament solutions provide methods of selecting winners of a competition based on the results of pairwise          comparisons. These methods have been studied in-depth from the perspective of social choice theory, where a          comparison between two candidates indicates which of them is preferred to another by the majority of voters.          In this paper we study the party setting, in which groups of candidates select their representatives. We          consider          the Uncovered Set tournament solution and contrast it with the Condorcet Winner rule, in which either          Condorcet winner is chosen or no selection is made. We show that checking if a Nash equilibrium exists is          NP-complete for both of these rules. Moreover, from          the perspective of Uncovered Set, it is also NP-complete to check if a party has a potential winner.
+
+      <hr>
+      <div class="paper">
+        <p class="paper-title">Strategic Cost Selection in Participatory Budgeting</p>
+        <p class="paper-venue">NeurIPS-2025</p>
+        <p class="paper-authors">With Piotr Faliszewski, Łukasz Janeczko, Andrzej Kaczmarczyk, Piotr Skowron, Stanisław Szufa, and Mateusz Szwagierczak</p>
+        <p class="paper-abstract">In this work we explore the ways in which project proposers can act strategically to see their submission selected with the highest possible cost (to ensure high-quality development of the project). We focus on how different voting rules shape the structure of Nash equilibria in games based on this type of strategizing.</p>
+      </div>
+
+       <hr>
+      <div class="paper">
+        <p class="paper-title">Neighborhood Stability in Assignments on Graphs</p>
+        <p class="paper-venue">WINE-2025</p>
+        <p class="paper-authors">With Haris Aziz, Mashbat Suzuki, and Jeremy Vollen</p>
+        <p class="paper-abstract">In this paper we explore swap stable assignments on graphs, where agents can only exchange their positions with their direct neighbors. We show the surprising existence of stable solutions on classes of graphs such as paths or cycles.</p>
+      </div>
+      
+       <hr>
+      <div class="paper">
+        <p class="paper-title">The Cost Perspective of Liquid Democracy: Feasibility and Control</p>
+        <p class="paper-venue">AAAI-2025</p>
+        <p class="paper-title">Neighborhood Stability in Assignments on Graphs</p>
+        <p class="paper-venue">WINE-2025</p>
+        <p class="paper-authors">With Shiri Alouf-Heffetz, Łukasz Janeczko, and Giorgios Papasotiropoulos</p>
+        <p class="paper-abstract">In this paper we analyze the methods of optimal selection of voters casting a ballot in the context of liquid democracy systems. In particular, we take into account how demanding it is for the individuals to vote.</p>
+      </div>
+
+      <hr>
+      <div class="paper">
+        <p class="paper-title">Discovering Consistent Subelections</p>
+        <p class="paper-venue">WINE-2025</p>
+        <p class="paper-authors">With Haris Aziz, Mashbat Suzuki, and Jeremy Vollen</p>
+        <p class="paper-abstract">In this paper we explore swap stable assignments on graphs, where agents can only exchange their positions with their direct neighbours.  We show the surprising existence of stable solutions on classes of graphs such as paths or cycles.</p>
+      </div>
+
+      <hr>
+      <div class="paper">
+        <p class="paper-title">Strategic Nominee Selection in Tournament Solutions</p>
+        <p class="paper-venue">EUMAS 2022</p>
+        <p class="paper-abstract">Tournament solutions provide methods of selecting winners of a competition based on the results of pairwise          comparisons. These methods have been studied in-depth from the perspective of social choice theory, where a          comparison between two candidates indicates which of them is preferred to another by the majority of voters.          In this paper we study the party setting, in which groups of candidates select their representatives. We          consider          the Uncovered Set tournament solution and contrast it with the Condorcet Winner rule, in which either          Condorcet winner is chosen or no selection is made. We show that checking if a Nash equilibrium exists is          NP-complete for both of these rules. Moreover, from          the perspective of Uncovered Set, it is also NP-complete to check if a party has a potential winner.</p>
+      </div>
+
       <h2>Papers</h2>
       <h3>Game Theory and Social Choice</h3>
         <hr>
@@ -120,6 +232,7 @@
     <section id="interests">
       <h2>Interests</h2>
       <p>
+        I am a keen underwater hockey player. Yes, it is a thing! You can also often find me planning trips to remote mountain ranges.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Senectus in
         amet elit ipsum pharetra faucibus ac imperdiet felis. Ultrices fames sit
         lacus ac justo, euismod feugiat. Aliquam rutrum lectus tellus sed leo eu
@@ -141,6 +254,7 @@
     </section>
   </div>
   <div>
+    <div class="contact" id="contact">
     <div class="contact">
       <img src="img/official_profile5.svg" id="profile" />
       <h2>Contact details</h2>
