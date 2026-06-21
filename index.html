@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div>
+  <div id="col-nav">
     <nav id="menu">
       <div id="nav-icon4" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
         <span></span>
@@ -29,26 +29,7 @@
       </div>
     </nav>
   </div>
-  <script>
-    const btn = document.getElementById('nav-icon4');
-    const links = document.getElementById('menu-links');
-    btn.addEventListener('click', () => {
-      const open = links.classList.toggle('open');
-      btn.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', open);
-    });
-    btn.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') btn.click();
-    });
-    links.querySelectorAll('.menu_item').forEach(a => {
-      a.addEventListener('click', () => {
-        links.classList.remove('open');
-        btn.classList.remove('open');
-        btn.setAttribute('aria-expanded', false);
-      });
-    });
-  </script>
-  <div>
+  <div id="col-main">
     <section>
       <h1>Hi, I am Grzesiek, a postdoc at Bernoulli Institute, University of Groningen!</a>
       </h1>
@@ -161,7 +142,7 @@
       </p>
     </section>
   </div>
-  <div>
+  <div id="col-contact">
     <div class="contact" id="contact">
       <img src="img/official_profile5.svg" id="profile" />
       <h2>Contact details</h2>
@@ -187,6 +168,25 @@
     </div>
   </div>
 
+  <script>
+    const btn = document.getElementById('nav-icon4');
+    const links = document.getElementById('menu-links');
+    btn.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      btn.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') btn.click();
+    });
+    links.querySelectorAll('.menu_item').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        btn.classList.remove('open');
+        btn.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
 </body>
 
 </html>

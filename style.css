@@ -13,6 +13,10 @@ body {
   gap: 30px;
 }
 
+#col-nav    { grid-column: 1; }
+#col-main   { grid-column: 2; }
+#col-contact { grid-column: 3; }
+
 a {
   color: #b83d00;
   text-align: left;
